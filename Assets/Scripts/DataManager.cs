@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 #region Serialized Classes
@@ -55,11 +56,12 @@ public class DataManager : MonoBehaviour
 
     #region Public Members
     public TextAsset MissionsJSON;// replaced eventually with incoming data
-    public TextMeshProUGUI CurrentMissionCheckpointCount;
+
     public TextMeshProUGUI CurrentMissionName;
-    public TextMeshProUGUI CurrentMissionStep;
+
     public TextMeshProUGUI MissionTotal;
 
+    public TMP_Dropdown missionDropDown;
 
     public List<SingleMission> MissionsFromList;
     #endregion
@@ -68,6 +70,7 @@ public class DataManager : MonoBehaviour
     SingleMission _currentMission;
     private int _currentMissionIndex = 0;
     private int _currentStepIndex = 1;
+    private List<TMP_Dropdown.OptionData> _dropDownOptions = new List<TMP_Dropdown.OptionData>();
     #endregion
 
     void Awake()
@@ -83,7 +86,7 @@ public class DataManager : MonoBehaviour
     }
 
 
-    #region Init Methods
+    #region Public Methods
 
     private void InitUI()
     {
@@ -92,10 +95,24 @@ public class DataManager : MonoBehaviour
         {
             MissionData missionsInJson = JsonUtility.FromJson<MissionData>(MissionsJSON.text);
 
+            // handle the drop down menu
+            TMP_Dropdown.OptionData firstOption = new TMP_Dropdown.OptionData();
+            firstOption.text = "Select Mission...";
+            _dropDownOptions.Add(firstOption);
+
+
             // now process each procedure and dump them into a List<SingleProcedure> for better access.
             foreach (SingleMission mission in missionsInJson.missions)
+            {
                 MissionsFromList.Add(mission);
 
+                // handle the dropdown
+                TMP_Dropdown.OptionData newOption = new TMP_Dropdown.OptionData();
+                newOption.text = mission._Name;
+                _dropDownOptions.Add(newOption);
+            }
+
+            missionDropDown.options = _dropDownOptions;
             // now that we have our data, load up the first procedure
             ProcessCurrentMission();
 
@@ -103,6 +120,13 @@ public class DataManager : MonoBehaviour
         }
         else
             Debug.LogError("No Procedure JSON loaded. Please add to continue");
+    }
+
+
+    public void SetMissionIndexToLoad(int index)
+    {
+        _currentMissionIndex = index - 1;// remove 1 because of the "Select Mission..." option
+        ProcessCurrentMission();
     }
 
     #endregion
@@ -117,9 +141,12 @@ public class DataManager : MonoBehaviour
         string curMission = _currentStepIndex.ToString();
         string totalMissions = (MissionsFromList.Count).ToString();
 
-        _currentMission = MissionsFromList[_currentMissionIndex];
-        //CurrentMissionName.text = _currentMission._Name;
+        _currentMission = MissionsFromList[(_currentMissionIndex)];// take 1 away because of the "Select Mission..." option
+
         MissionTotal.text = totalMissions;
+
+        CurrentMissionName.text = (missionDropDown.value != 0) ? _currentMission._Name : "Select from the list ";
+
         //CurrentMissionCheckpointCount.text = (_currentMission._Checkpoints.Length - 1).ToString();
 
     }
