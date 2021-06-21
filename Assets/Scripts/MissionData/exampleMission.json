@@ -1,0 +1,93 @@
+{
+    "missions": [
+        {
+            "_Assets": [
+                {
+                    "_country": "USA",
+                    "_name": "C130",
+                    "_type": "Aircraft"
+                },
+                {
+                    "_country": "Russia",
+                    "_name": "MIG",
+                    "_type": "Aircraft"
+                },
+                {
+                    "_country": "China",
+                    "_name": "Liaoning",
+                    "_type": "Carrier"
+                }
+            ],
+            "_Checkpoints": [
+                {
+                    "_checkpointNumber": 0
+                },
+                {
+                    "_checkpointNumber": 1
+                },
+                {
+                    "_checkpointNumber": 2
+                }
+            ],
+            "_Location": "South China Sea",
+            "_Name": "Alpha Zulu",
+            "_Phases": [
+                {
+                    "_name": "Phase Alpha"
+                },
+                {
+                    "_name": "Phase Bravo"
+                },
+                {
+                    "_name": "Phase Charlie"
+                },
+                {
+                    "_name": "Phase Delta"
+                }
+            ]
+        },
+        {
+            "_Assets": [
+                {
+                    "_country": "USA",
+                    "_name": "C130",
+                    "_type": "Aircraft"
+                },
+                {
+                    "_country": "Russia",
+                    "_name": "MIG",
+                    "_type": "Aircraft"
+                },
+                {
+                    "_country": "China",
+                    "_name": "Liaoning",
+                    "_type": "Carrier"
+                }
+            ],
+            "_Checkpoints": [
+                {
+                    "_checkpointNumber": 0
+                },
+                {
+                    "_checkpointNumber": 1
+                }
+            ],
+            "_Location": "West Pacific",
+            "_Name": "Bye Bye CA",
+            "_Phases": [
+                {
+                    "_name": "Phase I"
+                },
+                {
+                    "_name": "Phase II"
+                },
+                {
+                    "_name": "Phase III"
+                },
+                {
+                    "_name": "Phase IV"
+                }
+            ]
+        }
+    ]
+}
