@@ -36,6 +36,8 @@ public class SingleMission
     public MissionAsset[] _Assets;
     public MissionCheckPoint[] _Checkpoints;
     public string _Location;
+    public double _Latitude;
+    public double _Longitude;
     public string _Name;
     public MissionPhase[] _Phases;
 
@@ -54,6 +56,7 @@ public class MissionData
 public class DataManager : MonoBehaviour
 {
 
+    public static DataManager instance;
     #region Public Members
     public TextAsset MissionsJSON;// replaced eventually with incoming data
 
@@ -64,10 +67,11 @@ public class DataManager : MonoBehaviour
     public TMP_Dropdown missionDropDown;
 
     public List<SingleMission> MissionsFromList;
+    public SingleMission _currentMission;
     #endregion
 
     #region Private Members
-    SingleMission _currentMission;
+
     private int _currentMissionIndex = 0;
     private int _currentStepIndex = 1;
     private List<TMP_Dropdown.OptionData> _dropDownOptions = new List<TMP_Dropdown.OptionData>();
@@ -78,6 +82,14 @@ public class DataManager : MonoBehaviour
         InitUI();
     }
 
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        instance = this;
+    }
 
     // Update is called once per frame
     void Update()

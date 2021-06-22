@@ -794,7 +794,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416728724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2049672653}
@@ -3729,7 +3729,7 @@ MonoBehaviour:
   trackedHandness: 3
   trackedHandJoint: 2
   transformOverride: {fileID: 0}
-  additionalOffset: {x: 0, y: 0, z: 0}
+  additionalOffset: {x: 0, y: 0.51, z: 0}
   additionalRotation: {x: 0, y: 0, z: 0}
   updateSolvers: 1
 --- !u!114 &3140123473685929734
@@ -5334,7 +5334,7 @@ MonoBehaviour:
   - Target: {fileID: 6843178036868668191}
     Themes:
     - {fileID: 11400000, guid: 8f8cfb3041153fa45bccb6d664a563ec, type: 2}
-  - Target: {fileID: 0}
+  - Target: {fileID: 6049344834482365748}
     Themes:
     - {fileID: 11400000, guid: 087b16002c2b0b445baa3ed3beae44a9, type: 2}
   OnClick:
@@ -5660,7 +5660,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6843178035911591276}
   - component: {fileID: 6843178035911591184}
-  - component: {fileID: 6843178035911591278}
   - component: {fileID: 6843178035911591279}
   m_Layer: 0
   m_Name: TextMeshPro
@@ -5677,7 +5676,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6843178035911591277}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8782750742262665481}
@@ -5685,8 +5684,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.01368, y: 0.00063}
-  m_SizeDelta: {x: 0.0581, y: 0.01387}
+  m_AnchoredPosition: {x: -0.01184, y: 0.00166}
+  m_SizeDelta: {x: 0.06925, y: 0.02077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6843178035911591184
 MeshRenderer:
@@ -5729,14 +5728,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &6843178035911591278
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6843178035911591277}
-  m_CullTransparentMesh: 0
 --- !u!114 &6843178035911591279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5757,7 +5748,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LOAD SELECTED
+  m_text: '"LOAD SELECTED"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6a84f857bec7e7345843ae29404c57ce, type: 2}
   m_sharedMaterial: {fileID: 21202819797275496, guid: 6a84f857bec7e7345843ae29404c57ce, type: 2}

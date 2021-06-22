@@ -30,6 +30,15 @@ public class InteractionManager : MonoBehaviour
     #endregion
 
     #region Voice Commands
+
+    public void Voice_MainMenu()
+    {
+        Debug.Log("You said: Main Menu!");
+        // hide all UI menus
+        HideAllUI();
+        //unhide main menu
+        InitialMenu.SetActive(true);
+    }
     public void Voice_NewMission()
     {
         Debug.Log("You said: New Mission!");
@@ -44,11 +53,32 @@ public class InteractionManager : MonoBehaviour
         InitialMenu.SetActive(!LoadingMenu.activeInHierarchy);
     }
 
+    public void Voice_LoadSelected()
+    {
+        Debug.Log("You said: Load Selected!");
+        // hide loading menu
+        LoadingMenu.SetActive(false);
+        //launch the mission
+        LaunchSelectedMission();
+    }
+
 
     #endregion
     #endregion
 
     #region Private Methods
+
+    void LaunchSelectedMission()
+    {
+        Debug.Log("Loading Selected Mission: " + DataManager.instance._currentMission._Name);
+    }
+
+    void HideAllUI()
+    {
+        InitialMenu.SetActive(false);
+        NewMenu.SetActive(false);
+        LoadingMenu.SetActive(false);
+    }
 
     void ToggleLoadingMenu()
     {
