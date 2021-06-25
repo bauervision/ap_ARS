@@ -3,55 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
-#region Serialized Classes
-[System.Serializable]
-public class MissionAsset
-{
-    public string _country;
-    public string _name;
-    public string _type;// will become a Type Object
-
-
-}
-
-[System.Serializable]
-public class MissionPhase
-{
-    public string _name;
-
-}
-
-[System.Serializable]
-public class MissionCheckPoint
-{
-    public int _checkpointNumber;
-    public string _timeStamp;
-
-}
-
-[System.Serializable]
-public class SingleMission
-{
-    public MissionAsset[] _Assets;
-    public MissionCheckPoint[] _Checkpoints;
-    public string _Location;
-    public double _Latitude;
-    public double _Longitude;
-    public string _Name;
-    public MissionPhase[] _Phases;
-
-
-
-}
-
-[System.Serializable]
-public class MissionData
-{
-    public SingleMission[] missions;
-}
-#endregion
-
+using AMPS_DataModel;
 
 public class DataManager : MonoBehaviour
 {
@@ -66,8 +18,10 @@ public class DataManager : MonoBehaviour
 
     public TMP_Dropdown missionDropDown;
 
-    public List<SingleMission> MissionsFromList;
-    public SingleMission _currentMission;
+    public List<Mission> MissionsFromList;
+    public Mission _currentMission;
+
+
     #endregion
 
     #region Private Members
@@ -89,6 +43,8 @@ public class DataManager : MonoBehaviour
     void Start()
     {
         instance = this;
+
+
     }
 
     // Update is called once per frame
@@ -114,13 +70,13 @@ public class DataManager : MonoBehaviour
 
 
             // now process each procedure and dump them into a List<SingleProcedure> for better access.
-            foreach (SingleMission mission in missionsInJson.missions)
+            foreach (Mission mission in missionsInJson.missions)
             {
                 MissionsFromList.Add(mission);
 
                 // handle the dropdown
                 TMP_Dropdown.OptionData newOption = new TMP_Dropdown.OptionData();
-                newOption.text = mission._Name;
+                newOption.text = mission.name;
                 _dropDownOptions.Add(newOption);
             }
 
@@ -157,7 +113,7 @@ public class DataManager : MonoBehaviour
 
         MissionTotal.text = totalMissions;
 
-        CurrentMissionName.text = (missionDropDown.value != 0) ? _currentMission._Name : "Select from the list ";
+        CurrentMissionName.text = (missionDropDown.value != 0) ? _currentMission.name : "Select from the list ";
 
         //CurrentMissionCheckpointCount.text = (_currentMission._Checkpoints.Length - 1).ToString();
 

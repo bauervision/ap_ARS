@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
 {
-
+    public GameObject InteractiveMap;
     public GameObject InitialMenu;
     public GameObject LoadingMenu;
     public GameObject NewMenu;
+    public GameObject CloseUI;
 
     #region Public Methods
 
@@ -38,6 +39,8 @@ public class InteractionManager : MonoBehaviour
         HideAllUI();
         //unhide main menu
         InitialMenu.SetActive(true);
+        // hide the map
+        InteractiveMap.SetActive(false);
     }
     public void Voice_NewMission()
     {
@@ -70,7 +73,13 @@ public class InteractionManager : MonoBehaviour
 
     void LaunchSelectedMission()
     {
-        Debug.Log("Loading Selected Mission: " + DataManager.instance._currentMission._Name);
+        Debug.Log("Loading Selected Mission: " + DataManager.instance._currentMission.name);
+        //show the close UI
+        CloseUI.SetActive(true);
+        //show the map
+        InteractiveMap.SetActive(true);
+        // set the map to the location of the mission
+        OnlineMaps.instance.SetPositionAndZoom(DataManager.instance._currentMission.longitude, DataManager.instance._currentMission.latitude, 12);
     }
 
     void HideAllUI()
@@ -106,6 +115,9 @@ public class InteractionManager : MonoBehaviour
     {
         LoadingMenu.SetActive(false);
         NewMenu.SetActive(false);
+        CloseUI.SetActive(false);
+        // hide the map
+        InteractiveMap.SetActive(false);
     }
 
     // Update is called once per frame

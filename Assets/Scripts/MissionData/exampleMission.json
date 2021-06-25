@@ -1,91 +1,527 @@
 {
     "missions": [
         {
-            "_Assets": [
+            "Metadata": {
+                "CreatedTime": {
+                    "epochSeconds": 1624524586,
+                    "nanoseconds": 636711700
+                },
+                "ModifiedTime": {
+                    "epochSeconds": 1624625386,
+                    "nanoseconds": 641596700
+                }
+            },
+            "id": "18b5dde1-04ee-4f71-86d0-825009866051",
+            "name": "Air Drop Mission",
+            "description": "Example of an air drop",
+            "location": "Mission Location Classified",
+            "StartTime": {
+                "epochSeconds": 1624697386,
+                "nanoseconds": 641596700
+            },
+            "AlphaRoster": {
+                "Rosters": [
+                    {
+                        "id": "9f705f81-29c3-4ce5-849b-c72772500cda",
+                        "name": "1 Troop",
+                        "PersonnelList": [
+                            {
+                                "id": "850e0e79-5fc7-4ccf-ae5b-a53225296911",
+                                "name": "0",
+                                "callsign": "X-0",
+                                "EquipmentList": [
+                                    {
+                                        "serialNumber": "NA123-0",
+                                        "type": "M4"
+                                    },
+                                    {
+                                        "serialNumber": "X123-0",
+                                        "type": "Beacon"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "cdc57fa9-036d-4471-9d78-8ab734693a2d",
+                                "name": "1",
+                                "callsign": "X-1",
+                                "EquipmentList": [
+                                    {
+                                        "serialNumber": "NA123-1",
+                                        "type": "M4"
+                                    },
+                                    {
+                                        "serialNumber": "X123-1",
+                                        "type": "Beacon"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "e6faec81-2108-4611-b2e9-b738edc96896",
+                                "name": "2",
+                                "callsign": "X-2",
+                                "EquipmentList": [
+                                    {
+                                        "serialNumber": "NA123-2",
+                                        "type": "M4"
+                                    },
+                                    {
+                                        "serialNumber": "X123-2",
+                                        "type": "Beacon"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "9147b583-699c-4063-be37-329f0d6ce2d1",
+                                "name": "3",
+                                "callsign": "X-3",
+                                "EquipmentList": [
+                                    {
+                                        "serialNumber": "NA123-3",
+                                        "type": "M4"
+                                    },
+                                    {
+                                        "serialNumber": "X123-3",
+                                        "type": "Beacon"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "b24b40e2-e54e-4ac5-bb37-8bc4976b5f4d",
+                                "name": "4",
+                                "callsign": "X-4",
+                                "EquipmentList": [
+                                    {
+                                        "serialNumber": "NA123-4",
+                                        "type": "M4"
+                                    },
+                                    {
+                                        "serialNumber": "X123-4",
+                                        "type": "Beacon"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "2900cafa-8ac9-4311-a7c0-8759e12ecdf0",
+                                "name": "5",
+                                "callsign": "X-5",
+                                "EquipmentList": [
+                                    {
+                                        "serialNumber": "NA123-5",
+                                        "type": "M4"
+                                    },
+                                    {
+                                        "serialNumber": "X123-5",
+                                        "type": "Beacon"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "3e3504de-594b-47d8-9416-f2447dc0f1dc",
+                                "name": "6",
+                                "callsign": "X-6",
+                                "EquipmentList": [
+                                    {
+                                        "serialNumber": "NA123-6",
+                                        "type": "M4"
+                                    },
+                                    {
+                                        "serialNumber": "X123-6",
+                                        "type": "Beacon"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "06eb9280-5758-4dd9-9a81-8d9ebe4d44fe",
+                                "name": "7",
+                                "callsign": "X-7",
+                                "EquipmentList": [
+                                    {
+                                        "serialNumber": "NA123-7",
+                                        "type": "M4"
+                                    },
+                                    {
+                                        "serialNumber": "X123-7",
+                                        "type": "Beacon"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "974453fc-d393-4a41-9356-3231a8a43890",
+                                "name": "8",
+                                "callsign": "X-8",
+                                "EquipmentList": [
+                                    {
+                                        "serialNumber": "NA123-8",
+                                        "type": "M4"
+                                    },
+                                    {
+                                        "serialNumber": "X123-8",
+                                        "type": "Beacon"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "9a1f0996-6093-48e4-82ae-9afcd0a482cb",
+                                "name": "9",
+                                "callsign": "X-9",
+                                "EquipmentList": [
+                                    {
+                                        "serialNumber": "NA123-9",
+                                        "type": "M4"
+                                    },
+                                    {
+                                        "serialNumber": "X123-9",
+                                        "type": "Beacon"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "9087cae8-33e6-4789-bbbb-eacccaf64ca1",
+                        "name": "Enablers",
+                        "PersonnelList": [
+                            {
+                                "id": "92d0d3f1-c551-4289-aea4-4b8b2ff45cbd",
+                                "callsign": "Pilot",
+                                "Weight": {
+                                    "value": 180.0,
+                                    "units": "POUNDS"
+                                }
+                            },
+                            {
+                                "id": "911956b4-be34-4d1a-981d-daa1c470ed16",
+                                "callsign": "Co-Pilot",
+                                "Weight": {
+                                    "value": 180.0,
+                                    "units": "POUNDS"
+                                }
+                            },
+                            {
+                                "id": "e5012122-7cc1-42a6-ab41-2b23e8725bbc",
+                                "callsign": "CrewChief",
+                                "Weight": {
+                                    "value": 180.0,
+                                    "units": "POUNDS"
+                                }
+                            },
+                            {
+                                "id": "07eb10f2-6b2c-4c11-baa6-2124ee3604ed",
+                                "callsign": "Troop-1 stayback 1",
+                                "Weight": {
+                                    "value": 200.0,
+                                    "units": "POUNDS"
+                                }
+                            },
+                            {
+                                "id": "521d6c88-84e6-4e76-bca3-126602613f38",
+                                "callsign": "Troop-2 stayback 2",
+                                "Weight": {
+                                    "value": 200.0,
+                                    "units": "POUNDS"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "Assets": [
                 {
-                    "_country": "USA",
-                    "_name": "C130",
-                    "_type": "Aircraft"
+                    "id": "bd45e635-7e79-4326-883b-9eb9b656d831",
+                    "vehicleId": "3ade5968-0814-4c7b-a066-7d110ac755e0",
+                    "name": "C-17",
+                    "environment": "AIR",
+                    "Configuration": {
+                        "id": "6799b171-b3c1-4578-a259-0cf68d237d19",
+                        "callsign": "Bertha 4-1",
+                        "cargoManifestId": "8f166f1b-85bd-4dbf-9a52-5c39b284c1ec",
+                        "EmptyWeight": {
+                            "value": 125645.0,
+                            "units": "KILOGRAMS"
+                        },
+                        "InternalFuelWeight": {
+                            "value": 132405.0,
+                            "units": "KILOGRAMS"
+                        },
+                        "FuelBurn": {
+                            "value": 20000.0,
+                            "units": "POUNDS"
+                        },
+                        "PersonnelIds": [
+                            "e5012122-7cc1-42a6-ab41-2b23e8725bbc",
+                            "92d0d3f1-c551-4289-aea4-4b8b2ff45cbd",
+                            "911956b4-be34-4d1a-981d-daa1c470ed16"
+                        ]
+                    }
                 },
                 {
-                    "_country": "Russia",
-                    "_name": "MIG",
-                    "_type": "Aircraft"
+                    "id": "b5bc928a-268a-4234-b4f1-a8bbb56914b1",
+                    "name": "Assault troop 1",
+                    "environment": "GROUND",
+                    "Configuration": {
+                        "callsign": "Striker 1",
+                        "PersonnelIds": [
+                            "2900cafa-8ac9-4311-a7c0-8759e12ecdf0",
+                            "b24b40e2-e54e-4ac5-bb37-8bc4976b5f4d",
+                            "e6faec81-2108-4611-b2e9-b738edc96896",
+                            "974453fc-d393-4a41-9356-3231a8a43890",
+                            "850e0e79-5fc7-4ccf-ae5b-a53225296911",
+                            "06eb9280-5758-4dd9-9a81-8d9ebe4d44fe",
+                            "9147b583-699c-4063-be37-329f0d6ce2d1",
+                            "3e3504de-594b-47d8-9416-f2447dc0f1dc",
+                            "cdc57fa9-036d-4471-9d78-8ab734693a2d",
+                            "9a1f0996-6093-48e4-82ae-9afcd0a482cb"
+                        ]
+                    }
                 },
                 {
-                    "_country": "China",
-                    "_name": "Liaoning",
-                    "_type": "Carrier"
+                    "id": "93f7ae75-32be-4db9-92a9-5ae70690da54",
+                    "name": "Assault Troop Enablers",
+                    "environment": "GROUND",
+                    "Configuration": {
+                        "callsign": "Stayback-1",
+                        "PersonnelIds": [
+                            "521d6c88-84e6-4e76-bca3-126602613f38",
+                            "07eb10f2-6b2c-4c11-baa6-2124ee3604ed"
+                        ]
+                    }
                 }
             ],
-            "_Checkpoints": [
+            "Points": [
                 {
-                    "_checkpointNumber": 0
+                    "id": "99f4e2d6-a30f-4a9a-a379-b8844c6cdda4",
+                    "name": "Naval Air Station Oceana",
+                    "Coordinates": {
+                        "Latitude": {
+                            "type": "DECIMAL_DEGREES",
+                            "value": 36.8197,
+                            "units": "DEGREES"
+                        },
+                        "Longitude": {
+                            "type": "DECIMAL_DEGREES",
+                            "value": -76.0325,
+                            "units": "DEGREES"
+                        }
+                    }
                 },
                 {
-                    "_checkpointNumber": 1
-                },
-                {
-                    "_checkpointNumber": 2
+                    "id": "95ec01f8-bdfc-40f6-b3d3-c00e73ad8cfb",
+                    "name": "Drop Point",
+                    "Coordinates": {
+                        "Latitude": {
+                            "type": "DECIMAL_DEGREES",
+                            "value": 36.8197,
+                            "units": "DEGREES"
+                        },
+                        "Longitude": {
+                            "type": "DECIMAL_DEGREES",
+                            "value": -76.0326,
+                            "units": "DEGREES"
+                        }
+                    }
                 }
             ],
-            "_Location": "South China Sea",
-            "_Name": "Alpha Zulu",
-            "_Phases": [
+            "Routes": [
                 {
-                    "_name": "Phase Alpha"
-                },
-                {
-                    "_name": "Phase Bravo"
-                },
-                {
-                    "_name": "Phase Charlie"
-                },
-                {
-                    "_name": "Phase Delta"
-                }
-            ]
-        },
-        {
-            "_Assets": [
-                {
-                    "_country": "USA",
-                    "_name": "C130",
-                    "_type": "Aircraft"
-                },
-                {
-                    "_country": "Russia",
-                    "_name": "MIG",
-                    "_type": "Aircraft"
-                },
-                {
-                    "_country": "China",
-                    "_name": "Liaoning",
-                    "_type": "Carrier"
-                }
-            ],
-            "_Checkpoints": [
-                {
-                    "_checkpointNumber": 0
-                },
-                {
-                    "_checkpointNumber": 1
-                }
-            ],
-            "_Location": "West Pacific",
-            "_Name": "Bye Bye CA",
-            "_Phases": [
-                {
-                    "_name": "Phase I"
-                },
-                {
-                    "_name": "Phase II"
-                },
-                {
-                    "_name": "Phase III"
-                },
-                {
-                    "_name": "Phase IV"
+                    "id": "8be105d8-9855-4480-967a-38e8fc4e5256",
+                    "name": "C-17 air drop",
+                    "assetId": "bd45e635-7e79-4326-883b-9eb9b656d831",
+                    "Paths": [
+                        {
+                            "id": "4461209d-633e-45e7-9ed5-4518229e31b4",
+                            "pathType": "PRIMARY",
+                            "MinFuel": {
+                                "value": 1000.0,
+                                "units": "POUNDS"
+                            },
+                            "InitialState": {
+                                "Time": {
+                                    "epochSeconds": 1624625386,
+                                    "nanoseconds": 607417500
+                                }
+                            },
+                            "Transitions": [
+                                {
+                                    "id": "56a03faf-1b14-4dc8-85b1-8622b134406b",
+                                    "Intent": {
+                                        "id": "cdb64b04-18d1-48d4-bf4a-3c23f21686e9",
+                                        "description": "Takeoff from the airbase, and climb to 5000m",
+                                        "startPointId": "5998432b-c781-4b2d-8af2-477cdcb45452",
+                                        "endPointId": "5998432b-c781-4b2d-8af2-477cdcb45452",
+                                        "FuelBurn": {
+                                            "value": 10.0,
+                                            "units": "KILOGRAMS"
+                                        },
+                                        "CommandedAltitude": {
+                                            "units": "METERS",
+                                            "value": 5000.0,
+                                            "type": "ABOVE_GROUND_LEVEL",
+                                            "secondaryUnits": null,
+                                            "secondaryValue": null,
+                                            "secondaryType": null,
+                                            "isFlightLevel": false
+                                        },
+                                        "CommandedSpeed": {
+                                            "value": 500.0,
+                                            "units": "KNOTS",
+                                            "type": "GROUND_SPEED"
+                                        },
+                                        "TakeoffIntent": {
+                                            "launchPlatformType": "AIRBASE"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "1eb5ae72-f36e-4e14-a427-a8e7bfc5501a",
+                                    "Intent": {
+                                        "id": "800badd2-0410-43cd-bfde-c92ef0e0f5db",
+                                        "description": "Fly to the drop point",
+                                        "startPointId": "5998432b-c781-4b2d-8af2-477cdcb45452",
+                                        "endPointId": "f29f288c-b29f-44a9-a2b0-7901ecbe7b6f",
+                                        "FuelBurn": {
+                                            "value": 10.0,
+                                            "units": "KILOGRAMS"
+                                        },
+                                        "CommandedAltitude": {
+                                            "units": "METERS",
+                                            "value": 5000.0,
+                                            "type": "ABOVE_GROUND_LEVEL",
+                                            "secondaryUnits": null,
+                                            "secondaryValue": null,
+                                            "secondaryType": null,
+                                            "isFlightLevel": false
+                                        },
+                                        "CommandedSpeed": {
+                                            "value": 500.0,
+                                            "units": "KNOTS",
+                                            "type": "GROUND_SPEED"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "1a4960f4-7ba1-4775-b762-5227d0cbef40",
+                                    "Intent": {
+                                        "id": "8b712403-63e7-4e50-8619-1c7a3785b765",
+                                        "description": "Conduct airdrop",
+                                        "startPointId": "f29f288c-b29f-44a9-a2b0-7901ecbe7b6f",
+                                        "endPointId": "f29f288c-b29f-44a9-a2b0-7901ecbe7b6f",
+                                        "CommandedAltitude": {
+                                            "units": "METERS",
+                                            "value": 5000.0,
+                                            "type": "ABOVE_GROUND_LEVEL",
+                                            "secondaryUnits": null,
+                                            "secondaryValue": null,
+                                            "secondaryType": null,
+                                            "isFlightLevel": false
+                                        },
+                                        "CommandedSpeed": {
+                                            "value": 500.0,
+                                            "units": "KNOTS",
+                                            "type": "GROUND_SPEED"
+                                        },
+                                        "AirdropIntent": {
+                                            "DropAltitude": {
+                                                "units": "METERS",
+                                                "value": 5000.0,
+                                                "type": "MEAN_SEA_LEVEL",
+                                                "secondaryUnits": null,
+                                                "secondaryValue": null,
+                                                "secondaryType": null,
+                                                "isFlightLevel": false
+                                            },
+                                            "dropCargoId": "8f166f1b-85bd-4dbf-9a52-5c39b284c1ec"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "bd8d34e2-5854-4912-8190-127bd1444983",
+                                    "Intent": {
+                                        "id": "f1ef0b76-9c48-4675-8176-0e22b8d875da",
+                                        "description": "Return to base",
+                                        "startPointId": "f29f288c-b29f-44a9-a2b0-7901ecbe7b6f",
+                                        "endPointId": "4b35f086-a28c-4f41-8968-d1f91e1e6d63",
+                                        "CommandedAltitude": {
+                                            "units": "METERS",
+                                            "value": 2500.0,
+                                            "type": "ABOVE_GROUND_LEVEL",
+                                            "secondaryUnits": null,
+                                            "secondaryValue": null,
+                                            "secondaryType": null,
+                                            "isFlightLevel": false
+                                        },
+                                        "CommandedSpeed": {
+                                            "value": 250.0,
+                                            "units": "KNOTS",
+                                            "type": "GROUND_SPEED"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "632437de-8577-4616-b275-222e605f619d",
+                                    "Intent": {
+                                        "id": "53b7c176-79e2-42c9-baca-5b707c752940",
+                                        "description": "Land the plane",
+                                        "startPointId": "4b35f086-a28c-4f41-8968-d1f91e1e6d63",
+                                        "endPointId": "4b35f086-a28c-4f41-8968-d1f91e1e6d63",
+                                        "CommandedAltitude": {
+                                            "units": "METERS",
+                                            "value": 0.0,
+                                            "type": "ABOVE_GROUND_LEVEL",
+                                            "secondaryUnits": null,
+                                            "secondaryValue": null,
+                                            "secondaryType": null,
+                                            "isFlightLevel": false
+                                        },
+                                        "CommandedSpeed": {
+                                            "value": 50.0,
+                                            "units": "METERS_PER_SECOND",
+                                            "type": "GROUND_SPEED"
+                                        },
+                                        "LandingIntent": {
+                                            "recoveryPlatformType": "AIRBASE"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "RoutePoints": [
+                        {
+                            "id": "5998432b-c781-4b2d-8af2-477cdcb45452",
+                            "pointId": "99f4e2d6-a30f-4a9a-a379-b8844c6cdda4",
+                            "pointType": "INITIAL_POINT"
+                        },
+                        {
+                            "id": "f29f288c-b29f-44a9-a2b0-7901ecbe7b6f",
+                            "pointId": "95ec01f8-bdfc-40f6-b3d3-c00e73ad8cfb",
+                            "pointType": "LAUNCH_POINT"
+                        },
+                        {
+                            "id": "4b35f086-a28c-4f41-8968-d1f91e1e6d63",
+                            "pointId": "99f4e2d6-a30f-4a9a-a379-b8844c6cdda4"
+                        }
+                    ],
+                    "CargoManifests": [
+                        {
+                            "id": "8f166f1b-85bd-4dbf-9a52-5c39b284c1ec",
+                            "AssetIds": [
+                                "93f7ae75-32be-4db9-92a9-5ae70690da54",
+                                "b5bc928a-268a-4234-b4f1-a8bbb56914b1"
+                            ],
+                            "PersonnelIds": [
+                                "2900cafa-8ac9-4311-a7c0-8759e12ecdf0",
+                                "b24b40e2-e54e-4ac5-bb37-8bc4976b5f4d",
+                                "e6faec81-2108-4611-b2e9-b738edc96896",
+                                "974453fc-d393-4a41-9356-3231a8a43890",
+                                "850e0e79-5fc7-4ccf-ae5b-a53225296911",
+                                "06eb9280-5758-4dd9-9a81-8d9ebe4d44fe",
+                                "9147b583-699c-4063-be37-329f0d6ce2d1",
+                                "3e3504de-594b-47d8-9416-f2447dc0f1dc",
+                                "cdc57fa9-036d-4471-9d78-8ab734693a2d",
+                                "9a1f0996-6093-48e4-82ae-9afcd0a482cb"
+                            ]
+                        }
+                    ]
                 }
             ]
         }

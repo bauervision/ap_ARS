@@ -22,7 +22,7 @@ PlayerSettings:
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 0
+  m_SplashScreenDrawMode: 1
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -39,8 +39,14 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_SplashScreenLogos:
+  - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 171e68a179539b142aeebee1edf2afcb, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 12c838bf9e1393643a0c6af9c01d8b98, type: 3}
+    duration: 2
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 12c838bf9e1393643a0c6af9c01d8b98, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -128,7 +134,10 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 6628179315944871533, guid: 2d03d4b3181fa6b4fb9d4af398c5e5a2, type: 2}
+  - {fileID: -257535329639907334, guid: be63e10b4d6795a4c847964096e972e3, type: 2}
+  - {fileID: 734353750839265117, guid: d5b3477c9cc912548850fc91585d0ef2, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -600,11 +609,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: ARS
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Avatar Partners
+  metroCertificateIssuer: Avatar Partners
+  metroCertificateNotAfter: 00860bee8386d801
   metroApplicationDescription: Template_3D
   wsaImages: {}
   metroTileShortName: ARS
