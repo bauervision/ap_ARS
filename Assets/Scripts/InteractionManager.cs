@@ -5,6 +5,7 @@ using AMPS_DataModel;
 public class InteractionManager : MonoBehaviour
 {
     [Header("Base Elements")]
+    public OnlineMaps MapsInstance;
     public GameObject InteractiveMap;
     public GameObject InitialMenu;
     public GameObject LoadingMenu;
@@ -28,6 +29,9 @@ public class InteractionManager : MonoBehaviour
 
     #region Private Variables
     List<OnlineMapsMarker3D> missionMarkers = new List<OnlineMapsMarker3D>();
+
+    private Mission _currentLoadedMission;
+    private float _size;
 
     #endregion
     #region UI Methods
@@ -96,23 +100,33 @@ public class InteractionManager : MonoBehaviour
         //show the map
         InteractiveMap.SetActive(true);
 
+        // set the local refernce of this variable
+        _currentLoadedMission = DataManager.instance._currentMission;
+
+        if (_currentLoadedMission.Points.Length < 1)
+            return;
+
         // get the coords from the first Point in the Routes object stored in the mission
-        double mLat = DataManager.instance._currentMission.Points[0].Coordinates.Latitude.value;
-        double mLng = DataManager.instance._currentMission.Points[0].Coordinates.Longitude.value;
+        double mLat = _currentLoadedMission.Points[0].Coordinates.Latitude.value;
+        double mLng = _currentLoadedMission.Points[0].Coordinates.Longitude.value;
         // and now set them as the coords for the mission
-        DataManager.instance._currentMission.latitude = mLat;
-        DataManager.instance._currentMission.longitude = mLng;
+        _currentLoadedMission.latitude = mLat;
+        _currentLoadedMission.longitude = mLng;
 
         // set the map to the location of the mission
         //TODO: figure out a way to set the zoom to show the entire mission route
-        int zoom = 9;
+        int zoom = 11;
         OnlineMaps.instance.SetPositionAndZoom(mLng, mLat, zoom);
 
+        // Subscribe to events of map.
+        OnlineMaps.instance.OnChangePosition += UpdateLine;
+        OnlineMaps.instance.OnChangeZoom += UpdateLine;
+
         // create markers for all of the points in the missions
-        HandleMissionPoints(DataManager.instance._currentMission);
+        HandleMissionPoints();
     }
 
-    void HandleMissionPoints(Mission curMission)
+    void HandleMissionPoints()
     {
         // create the mesh line that will be drawn between points
         GameObject _lineContainer = new GameObject("Path: dotted line");
@@ -125,7 +139,7 @@ public class InteractionManager : MonoBehaviour
 
 
         // run through all of the points stored in the mission
-        foreach (Point point in curMission.Points)
+        foreach (Point point in _currentLoadedMission.Points)
         {
             //create the vector2 for the coords
             Vector2 pointCoords = new Vector2((float)point.Coordinates.Longitude.value, (float)point.Coordinates.Latitude.value);
@@ -138,15 +152,20 @@ public class InteractionManager : MonoBehaviour
 
         }
 
-        UpdateLine(curMission.Points);
+        UpdateLine();
         // now push the line up a little to get it off the map
         float heightOffset = 0.06f;
         _lineContainer.transform.localPosition = new Vector3(0, heightOffset, 0);
     }
 
-    private void UpdateLine(Point[] missionPoints)
+    private void UpdateLine()
     {
+        if (_currentLoadedMission?.Points.Length < 1)
+            return;
 
+        _size = pathLineSize;
+
+        Point[] missionPoints = _currentLoadedMission.Points;
 
         float totalDistance = 0;
         Vector3 lastPosition = Vector3.zero;
@@ -266,12 +285,15 @@ public class InteractionManager : MonoBehaviour
         CloseUI.SetActive(false);
         // hide the map
         InteractiveMap.SetActive(false);
+
+
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
+        // If size changed, then update line.
+        if (System.Math.Abs(_size - pathLineSize) > float.Epsilon) UpdateLine();
     }
 
 

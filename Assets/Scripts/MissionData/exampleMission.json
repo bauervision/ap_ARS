@@ -310,12 +310,44 @@
                     "Coordinates": {
                         "Latitude": {
                             "type": "DECIMAL_DEGREES",
-                            "value": 36.88197,
+                            "value": 36.84326,
                             "units": "DEGREES"
                         },
                         "Longitude": {
                             "type": "DECIMAL_DEGREES",
-                            "value": -75.0326,
+                            "value": -75.92723,
+                            "units": "DEGREES"
+                        }
+                    }
+                },
+                {
+                    "id": "95ec01f8-bdfc-40f6-b3d3-c00e73ad8cZ",
+                    "name": "Drop Point 2",
+                    "Coordinates": {
+                        "Latitude": {
+                            "type": "DECIMAL_DEGREES",
+                            "value": 36.92529,
+                            "units": "DEGREES"
+                        },
+                        "Longitude": {
+                            "type": "DECIMAL_DEGREES",
+                            "value": -75.93896,
+                            "units": "DEGREES"
+                        }
+                    }
+                },
+                {
+                    "id": "95ec01f8-bdfc-40f6-b3d3-c00e73ad8cA",
+                    "name": "Drop Point 3",
+                    "Coordinates": {
+                        "Latitude": {
+                            "type": "DECIMAL_DEGREES",
+                            "value": 36.92852,
+                            "units": "DEGREES"
+                        },
+                        "Longitude": {
+                            "type": "DECIMAL_DEGREES",
+                            "value": -76.06678,
                             "units": "DEGREES"
                         }
                     }

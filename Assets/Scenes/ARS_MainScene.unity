@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850409fb885e2674394c9e0fe63a5b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MapsInstance: {fileID: 1020979518}
   InteractiveMap: {fileID: 1804241657}
   InitialMenu: {fileID: 2038650327}
   LoadingMenu: {fileID: 750426162}
@@ -670,15 +671,15 @@ MonoBehaviour:
   checkMarker2DVisibility: 0
   elevationResolution: 32
   markerMaterial: {fileID: 0}
-  markerShader: {fileID: 30, guid: 0000000000000000f000000000000000, type: 0}
+  markerShader: {fileID: 4800000, guid: 5bdea20278144b11916d77503ba1467a, type: 3}
   sizeInScene: {x: 1024, y: 1024}
   colliderType: 1
   compressTextures: 1
   drawingsGameObject: {fileID: 0}
   drawingMode: 0
-  drawingShader: {fileID: 4800000, guid: 07fd051d8972c7a4bac96bfa8038d08b, type: 3}
+  drawingShader: {fileID: 4800000, guid: 5bdea20278144b11916d77503ba1467a, type: 3}
   tileMaterial: {fileID: 0}
-  tilesetShader: {fileID: 4800000, guid: e951aa0c126d1a7409bfec1296857a7b, type: 3}
+  tilesetShader: {fileID: 4800000, guid: 5bdea20278144b11916d77503ba1467a, type: 3}
   _mipmapForTiles: 0
 --- !u!114 &1020979516
 MonoBehaviour:
@@ -1134,7 +1135,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 2185.3013
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1446,6 +1447,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 429057907}
     m_Modifications:
+    - target: {fileID: 6619780388798621476, guid: eb28ab4f8606c7f46bbaf1b8b84a1888, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619780388798621481, guid: eb28ab4f8606c7f46bbaf1b8b84a1888, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5263813
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619780388798621481, guid: eb28ab4f8606c7f46bbaf1b8b84a1888, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.5263813
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619780388798621481, guid: eb28ab4f8606c7f46bbaf1b8b84a1888, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5263813
+      objectReference: {fileID: 0}
     - target: {fileID: 6619780389024713246, guid: eb28ab4f8606c7f46bbaf1b8b84a1888, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1493,6 +1510,10 @@ PrefabInstance:
     - target: {fileID: 6619780389024713247, guid: eb28ab4f8606c7f46bbaf1b8b84a1888, type: 3}
       propertyPath: m_Name
       value: CloseUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619780389024713247, guid: eb28ab4f8606c7f46bbaf1b8b84a1888, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb28ab4f8606c7f46bbaf1b8b84a1888, type: 3}
