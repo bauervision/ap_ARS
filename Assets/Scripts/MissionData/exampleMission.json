@@ -310,12 +310,12 @@
                     "Coordinates": {
                         "Latitude": {
                             "type": "DECIMAL_DEGREES",
-                            "value": 36.8197,
+                            "value": 36.88197,
                             "units": "DEGREES"
                         },
                         "Longitude": {
                             "type": "DECIMAL_DEGREES",
-                            "value": -76.0326,
+                            "value": -75.0326,
                             "units": "DEGREES"
                         }
                     }

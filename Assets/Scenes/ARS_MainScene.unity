@@ -170,6 +170,10 @@ MonoBehaviour:
   LoadingMenu: {fileID: 750426162}
   NewMenu: {fileID: 4863379806502703696}
   CloseUI: {fileID: 1844524493}
+  PointPrefab: {fileID: 5887055142690757239, guid: fc0ba8f0d58af884f82e2273ade0ae63, type: 3}
+  pathLineSize: 0.01
+  pathUvScale: {x: 2, y: 1}
+  pathMaterial: {fileID: 2100000, guid: 5b85063378c5a954cae885ca4ef1e9a1, type: 2}
 --- !u!4 &268860626
 Transform:
   m_ObjectHideFlags: 0
@@ -536,6 +540,7 @@ Transform:
   - {fileID: 1607275048}
   - {fileID: 1695510436}
   - {fileID: 429057907}
+  - {fileID: 1159113903}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -705,9 +710,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _items: []
-  defaultScale: 1
+  defaultScale: 20
   allowAddMarker3DByN: 1
-  defaultPrefab: {fileID: 0}
+  defaultPrefab: {fileID: 5887055142690757239, guid: fc0ba8f0d58af884f82e2273ade0ae63, type: 3}
 --- !u!114 &1020979518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,7 +740,7 @@ MonoBehaviour:
   lockRedraw: 0
   needRedraw: 1
   notInteractUnderGUI: 1
-  mapType: mapbox.map
+  mapType: arcgis.worldimagery
   osmServer: 0
   proxyURL: https://service.infinity-code.com/redirect.php?
   redrawOnPlay: 1
@@ -753,7 +758,7 @@ MonoBehaviour:
   useProxy: 1
   useSoftwareJPEGDecoder: 0
   width: 1024
-  _activeTypeSettings: 07User ID11006Map ID11012Access Token110
+  _activeTypeSettings: 
   _zoom: 5.13
   latitude: 21.9027749003163
   longitude: 120.856757997888
@@ -861,8 +866,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1019617695}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1401373847
 PrefabInstance:
@@ -1280,6 +1285,36 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.5
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
+--- !u!1 &1694420147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694420148}
+  m_Layer: 0
+  m_Name: ---------------------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1694420148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694420147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.062393166, y: -0.025313437, z: 3.5340586}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695510435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,8 +1432,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804241657}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.554, y: -0.624, z: 2.948}
-  m_LocalScale: {x: 0.0030761263, y: 0.0030761263, z: 0.0030761263}
+  m_LocalPosition: {x: -1.554, y: -1.2, z: 4.59}
+  m_LocalScale: {x: 0.004359794, y: 0.004359794, z: 0.004359794}
   m_Children:
   - {fileID: 1020979519}
   m_Father: {fileID: 0}
