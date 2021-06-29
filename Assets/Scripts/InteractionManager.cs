@@ -78,8 +78,13 @@ public class InteractionManager : MonoBehaviour
         CloseUI.SetActive(true);
         //show the map
         InteractiveMap.SetActive(true);
+
+        // get the coords from the first Point in the Routes object stored in the mission
+        double mLat = DataManager.instance._currentMission.Points[0].Coordinates.Latitude.value;
+        double mLng = DataManager.instance._currentMission.Points[0].Coordinates.Longitude.value;
+
         // set the map to the location of the mission
-        OnlineMaps.instance.SetPositionAndZoom(DataManager.instance._currentMission.longitude, DataManager.instance._currentMission.latitude, 12);
+        OnlineMaps.instance.SetPositionAndZoom(mLng, mLat, 12);
     }
 
     void HideAllUI()
