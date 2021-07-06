@@ -4,6 +4,8 @@ using UnityEngine;
 using AMPS_DataModel;
 public class InteractionManager : MonoBehaviour
 {
+    public static InteractionManager instance;
+
     [Header("Base Elements")]
     public OnlineMaps MapsInstance;
     public GameObject InteractiveMap;
@@ -74,9 +76,12 @@ public class InteractionManager : MonoBehaviour
     public void Voice_LoadMission()
     {
         Debug.Log("You said: Load Mission!");
-        AnimationManager.instance.PlayStartMenuClose();
-        //todo: make this animated
+        //
         LoadingMenu.SetActive(true);
+        AnimationManager.instance.PlayStartMenuClose();
+
+
+
         //ToggleLoadingMenu();
 
     }
@@ -89,6 +94,7 @@ public class InteractionManager : MonoBehaviour
         AmpsMenu.SetActive(true);
         //launch the mission
         LaunchSelectedMission();
+        AnimationManager.instance.UI_audio_source.PlayOneShot(AnimationManager.instance.UI_Audio.PositiveFeedback);
     }
 
 
@@ -102,6 +108,8 @@ public class InteractionManager : MonoBehaviour
 
         //show the map
         InteractiveMap.SetActive(true);
+        // trigger animation
+        AnimationManager.instance.ShowMap();
 
         // set the local refernce of this variable
         _currentLoadedMission = DataManager.instance._currentMission;
@@ -125,11 +133,10 @@ public class InteractionManager : MonoBehaviour
         OnlineMaps.instance.OnChangePosition += UpdateLine;
         OnlineMaps.instance.OnChangeZoom += UpdateLine;
 
-        // create markers for all of the points in the missions
-        HandleMissionPoints();
+
     }
 
-    void HandleMissionPoints()
+    public void HandleMissionPoints()
     {
         // create the mesh line that will be drawn between points
         GameObject _lineContainer = new GameObject("Path: dotted line");
@@ -285,6 +292,8 @@ public class InteractionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+
         AmpsMenu.SetActive(false);
         LoadingMenu.SetActive(false);
         //NewMenu.SetActive(false);
@@ -298,7 +307,7 @@ public class InteractionManager : MonoBehaviour
 
     private void Update()
     {
-        if (_currentLoadedMission != null)
+        if (_currentLoadedMission != null && AnimationManager.instance.mapIsVisible)
             if (System.Math.Abs(_size - pathLineSize) > float.Epsilon) UpdateLine();// If size changed, then update line.
     }
 

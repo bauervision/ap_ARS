@@ -14,7 +14,9 @@ public class AnimationManager : MonoBehaviour
     public Animator UI_animator;
     public Animator StartMenu_animator;
     public Animator MapBase_animator;
+    public Animator BottomMenu_animator;
     public bool isOpened = false;
+    public bool mapIsVisible = false;
 
     [Header("Audio Related")]
     public AudioSource UI_audio_source;
@@ -25,7 +27,10 @@ public class AnimationManager : MonoBehaviour
     public App_Audio App_Audio;
     public Mission_Audio Mission_Audio;
 
+    private Animator currentPlayingAnimator;
 
+
+    private bool animationTriggered = false;
 
 
 
@@ -43,10 +48,19 @@ public class AnimationManager : MonoBehaviour
         Amps_audio_source.PlayOneShot(App_Audio.App_RoomTone);
     }
 
+    public void ShowBottomMenu()
+    {
+        BottomMenu_animator.SetBool("showBottomMenu", true);
+    }
+
 
     public void ShowMap()
     {
         MapBase_animator.SetBool("showMap", true);
+        Mission_audio_source.PlayOneShot(Mission_Audio.Mission_Loaded);
+        //when the audio has finished playing
+        animationTriggered = true;
+        currentPlayingAnimator = MapBase_animator;
     }
 
     public void HideMap()
@@ -54,10 +68,12 @@ public class AnimationManager : MonoBehaviour
         MapBase_animator.SetBool("showMap", false);
     }
 
+
     public void PlayStartMenuClose()
     {
         StartMenu_animator.SetBool("closeMenu", true);
-
+        BottomMenu_animator.SetBool("showBottomMenu", true);
+        UI_audio_source.PlayOneShot(UI_Audio.PositiveFeedback);
     }
 
     public void PlayOpenAnimation()
@@ -84,6 +100,26 @@ public class AnimationManager : MonoBehaviour
             PlayCloseAnimation();
         else
             PlayOpenAnimation();
+    }
+
+    private bool AnimatorIsPlaying()
+    {
+        return currentPlayingAnimator.GetCurrentAnimatorStateInfo(0).length > currentPlayingAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+
+    }
+
+    private void Update()
+    {
+        if (animationTriggered)
+        {
+            animationTriggered = AnimatorIsPlaying();
+            if (!animationTriggered)
+            {
+                Debug.Log("Animation finished!");
+                // do something when animation is finished
+                InteractionManager.instance.HandleMissionPoints();
+            }
+        }
     }
 
 }
