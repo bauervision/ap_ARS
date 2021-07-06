@@ -8,12 +8,18 @@ using AMPS_Audio;
 
 public class AnimationManager : MonoBehaviour
 {
+    public static AnimationManager instance;
+
     [Header("Public Variables")]
-    public Animator animator;
-    public bool isOpened = true;
+    public Animator UI_animator;
+    public Animator StartMenu_animator;
+    public Animator MapBase_animator;
+    public bool isOpened = false;
 
     [Header("Audio Related")]
-    public AudioSource audioSource;
+    public AudioSource UI_audio_source;
+    public AudioSource Amps_audio_source;
+    public AudioSource Mission_audio_source;
 
     public UI_Audio UI_Audio;
     public App_Audio App_Audio;
@@ -30,21 +36,44 @@ public class AnimationManager : MonoBehaviour
 
     #endregion
 
+    private void Start()
+    {
+        instance = this;
+
+        Amps_audio_source.PlayOneShot(App_Audio.App_RoomTone);
+    }
+
+
+    public void ShowMap()
+    {
+        MapBase_animator.SetBool("showMap", true);
+    }
+
+    public void HideMap()
+    {
+        MapBase_animator.SetBool("showMap", false);
+    }
+
+    public void PlayStartMenuClose()
+    {
+        StartMenu_animator.SetBool("closeMenu", true);
+
+    }
 
     public void PlayOpenAnimation()
     {
-        animator.SetBool("open", false);
+        UI_animator.SetBool("open", false);
         OnUIOpened.Invoke();
-        audioSource.PlayOneShot(UI_Audio.Panel_Open);
+        UI_audio_source.PlayOneShot(UI_Audio.Panel_Open);
         isOpened = true;
 
     }
 
     public void PlayCloseAnimation()
     {
-        animator.SetBool("open", true);
+        UI_animator.SetBool("open", true);
         OnUIClosed.Invoke();
-        audioSource.PlayOneShot(UI_Audio.Panel_Close);
+        UI_audio_source.PlayOneShot(UI_Audio.Panel_Close);
         isOpened = false;
 
     }

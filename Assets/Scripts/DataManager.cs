@@ -63,10 +63,10 @@ public class DataManager : MonoBehaviour
         {
             MissionData missionsInJson = JsonUtility.FromJson<MissionData>(MissionsJSON.text);
 
-            // handle the drop down menu
-            TMP_Dropdown.OptionData firstOption = new TMP_Dropdown.OptionData();
-            firstOption.text = "Select Mission...";
-            _dropDownOptions.Add(firstOption);
+            // // handle the drop down menu
+            // TMP_Dropdown.OptionData firstOption = new TMP_Dropdown.OptionData();
+            // firstOption.text = "Select Mission...";
+            // _dropDownOptions.Add(firstOption);
 
 
             // now process each procedure and dump them into a List<SingleProcedure> for better access.
@@ -93,7 +93,7 @@ public class DataManager : MonoBehaviour
 
     public void SetMissionIndexToLoad(int index)
     {
-        _currentMissionIndex = index - 1;// remove 1 because of the "Select Mission..." option
+        _currentMissionIndex = index;// remove 1 because of the "Select Mission..." option
         ProcessCurrentMission();
     }
 

@@ -7,10 +7,11 @@ public class InteractionManager : MonoBehaviour
     [Header("Base Elements")]
     public OnlineMaps MapsInstance;
     public GameObject InteractiveMap;
-    public GameObject InitialMenu;
+
+    public GameObject AmpsMenu;
     public GameObject LoadingMenu;
-    public GameObject NewMenu;
-    public GameObject CloseUI;
+    //public GameObject NewMenu;
+    //public GameObject CloseUI;
 
     [Header("Prefabs to spawn on the map")]
     public GameObject PointPrefab;
@@ -59,8 +60,7 @@ public class InteractionManager : MonoBehaviour
         Debug.Log("You said: Main Menu!");
         // hide all UI menus
         HideAllUI();
-        //unhide main menu
-        InitialMenu.SetActive(true);
+
         // hide the map
         InteractiveMap.SetActive(false);
     }
@@ -68,14 +68,17 @@ public class InteractionManager : MonoBehaviour
     {
         Debug.Log("You said: New Mission!");
         ToggleNewMenu();
-        InitialMenu.SetActive(!NewMenu.activeInHierarchy);
+
     }
 
     public void Voice_LoadMission()
     {
         Debug.Log("You said: Load Mission!");
-        ToggleLoadingMenu();
-        InitialMenu.SetActive(!LoadingMenu.activeInHierarchy);
+        AnimationManager.instance.PlayStartMenuClose();
+        //todo: make this animated
+        LoadingMenu.SetActive(true);
+        //ToggleLoadingMenu();
+
     }
 
     public void Voice_LoadSelected()
@@ -83,6 +86,7 @@ public class InteractionManager : MonoBehaviour
         Debug.Log("You said: Load Selected!");
         // hide loading menu
         LoadingMenu.SetActive(false);
+        AmpsMenu.SetActive(true);
         //launch the mission
         LaunchSelectedMission();
     }
@@ -95,8 +99,7 @@ public class InteractionManager : MonoBehaviour
 
     void LaunchSelectedMission()
     {
-        //show the close UI
-        CloseUI.SetActive(true);
+
         //show the map
         InteractiveMap.SetActive(true);
 
@@ -160,6 +163,9 @@ public class InteractionManager : MonoBehaviour
 
     private void UpdateLine()
     {
+        if (_currentLoadedMission == null)
+            return;
+
         if (_currentLoadedMission?.Points.Length < 1)
             return;
 
@@ -251,23 +257,22 @@ public class InteractionManager : MonoBehaviour
 
     void HideAllUI()
     {
-        InitialMenu.SetActive(false);
-        NewMenu.SetActive(false);
+
         LoadingMenu.SetActive(false);
     }
 
     void ToggleLoadingMenu()
     {
         LoadingMenu.SetActive(!LoadingMenu.activeInHierarchy);
-        // if the new menu was showing, hide it
-        if (NewMenu.activeInHierarchy)
-            NewMenu.SetActive(false);
+        // // if the new menu was showing, hide it
+        // if (NewMenu.activeInHierarchy)
+        //     NewMenu.SetActive(false);
 
     }
 
     void ToggleNewMenu()
     {
-        NewMenu.SetActive(!NewMenu.activeInHierarchy);
+        // NewMenu.SetActive(!NewMenu.activeInHierarchy);
         // if the loading menu was showing, hide it
         if (LoadingMenu.activeInHierarchy)
             LoadingMenu.SetActive(false);
@@ -280,9 +285,10 @@ public class InteractionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AmpsMenu.SetActive(false);
         LoadingMenu.SetActive(false);
-        NewMenu.SetActive(false);
-        CloseUI.SetActive(false);
+        //NewMenu.SetActive(false);
+        // CloseUI.SetActive(false);
         // hide the map
         InteractiveMap.SetActive(false);
 
@@ -292,8 +298,8 @@ public class InteractionManager : MonoBehaviour
 
     private void Update()
     {
-        // If size changed, then update line.
-        if (System.Math.Abs(_size - pathLineSize) > float.Epsilon) UpdateLine();
+        if (_currentLoadedMission != null)
+            if (System.Math.Abs(_size - pathLineSize) > float.Epsilon) UpdateLine();// If size changed, then update line.
     }
 
 
